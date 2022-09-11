@@ -1,14 +1,16 @@
 //# Projeto de Introdução ao desenvolvimento web
 
+//SEMANA 1
+
 //Pense em alguma coisa do cotidiano que seja contável e estruturada. Por enquanto, vamos chamar esta coisa de item. Com esse item, nós vamos construir nossas lógicas e evoluir no projeto através das semanas. Pode ser qualquer coisa que possa ser descrita com características escritas.
 
 /*1. Para o item que você decidiu, pense nas características que são importantes para construí-lo. Vamos usar estas características para definir exemplos destes objetos usando o código.
 Você precisará criar pelo menos:
 * uma característica String;
 * uma característica Number;
-* uma característica Boolean; */
+* uma característica Boolean; 
 
-/* RESPOSTA:
+RESPOSTA:
 const filme = String
 const duracao = Number
 const venceuOscar = Boolean */
@@ -76,3 +78,77 @@ console.log(
 console.log(
   `Filme: ${filme3.toUpperCase()}\nDuração: ${duracao3} min \nVencedor de Oscar?: ${venceuOscar3}\nElenco: ${elenco3}`
 );
+
+//SEMANA 2
+
+//1. Transforme os itens que criamos nas últimas semanas em objetos.
+
+const objeto1 = {
+  filme1: "Gladiador",
+  duracao1: 155,
+  venceuOscar1: true,
+  elenco1: [
+    "Russell Crowe",
+    "Joaquin Phoenix",
+    "Connie Nielsen",
+    "Oliver Reed",
+    "Derek Jacobi",
+    "Djimon Hounsou",
+    "Richard Harris",
+  ],
+};
+const objeto2 = {
+  filme2: "O Resgate do Soldado Ryan",
+  duracao2: 169,
+  venceuOscar2: true,
+  elenco2: [
+    "Tom Hanks",
+    "Tom Sizemore",
+    "Matt Damon",
+    "Edward Burns",
+    "Barry Pepper",
+    "Vin Diesel",
+  ],
+};
+const objeto3 = {
+  filme3: "O Patriota",
+  duracao3: 175,
+  venceuOscar3: false,
+  elenco3: [
+    "Mel Gibson",
+    "Heath Ledger",
+    "Joely Richardson",
+    "Jason Isaacs",
+    "Chris Cooper",
+  ],
+};
+
+//2. Crie um array para guardar os objetos. Este array deve estar vazio, por enquanto;
+
+const arrayFilmes = [];
+
+//3. Adicione os objetos criados no item 1 ao array de objetos criado no item 2, utilizando o push()
+
+/*RESPOSTA
+arrayFilmes.push(objeto1,objeto2,objeto3)*/
+
+//4. Altere o item “Adicione os novos objetos no array de objetos, utilizando o push()” (item 3), para criar uma verificação antes de dar o push. A caraterística booleana do objeto deve ser validada. Isto é, o objeto só deve ser adicionado ao array se a propriedade booleana for true;
+//5. Crie uma condição else, que, em caso de valor false na condição acima, exiba um **ALERT** avisando para o usuário que o item não foi adicionado, e não faça o push
+
+if (objeto1.venceuOscar1) {
+  arrayFilmes.push(objeto1);
+} else {
+  console.log(alert("Objeto1 não adicionado"));
+}
+
+if (objeto2.venceuOscar2) {
+  arrayFilmes.push(objeto2);
+} else {
+  console.log(alert("Objeto2 não adicionado"));
+}
+
+if (objeto3.venceuOscar3) {
+  arrayFilmes.push(objeto3);
+} else {
+  console.log(alert("Objeto3 não adicionado"));
+}
