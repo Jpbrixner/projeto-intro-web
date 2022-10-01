@@ -1,5 +1,6 @@
-//# Projeto de Introdução ao desenvolvimento web
+//# PROJETO DE INTRODUÇÃO AO DESENVOLVIMENTO WEB
 
+//==================================================================================================================
 //SEMANA 1
 
 //Pense em alguma coisa do cotidiano que seja contável e estruturada. Por enquanto, vamos chamar esta coisa de item. Com esse item, nós vamos construir nossas lógicas e evoluir no projeto através das semanas. Pode ser qualquer coisa que possa ser descrita com características escritas.
@@ -79,15 +80,16 @@ console.log(
   `Filme: ${filme3.toUpperCase()}\nDuração: ${duracao3} min \nVencedor de Oscar?: ${venceuOscar3}\nElenco: ${elenco3}`
 );
 
+//==================================================================================================================
 //SEMANA 2
 
 //1. Transforme os itens que criamos nas últimas semanas em objetos.
 
-const objeto1 = {
-  filme1: "Gladiador",
-  duracao1: 155,
-  venceuOscar1: true,
-  elenco1: [
+const objetoFilme1 = {
+  filme: "Gladiador",
+  duracao: 155,
+  venceuOscar: true,
+  elenco: [
     "Russell Crowe",
     "Joaquin Phoenix",
     "Connie Nielsen",
@@ -97,11 +99,11 @@ const objeto1 = {
     "Richard Harris",
   ],
 };
-const objeto2 = {
-  filme2: "O Resgate do Soldado Ryan",
-  duracao2: 169,
-  venceuOscar2: true,
-  elenco2: [
+const objetoFilme2 = {
+  filme: "O Resgate do Soldado Ryan",
+  duracao: 169,
+  venceuOscar: true,
+  elenco: [
     "Tom Hanks",
     "Tom Sizemore",
     "Matt Damon",
@@ -110,11 +112,11 @@ const objeto2 = {
     "Vin Diesel",
   ],
 };
-const objeto3 = {
-  filme3: "O Patriota",
-  duracao3: 175,
-  venceuOscar3: false,
-  elenco3: [
+const objetoFilme3 = {
+  filme: "O Patriota",
+  duracao: 175,
+  venceuOscar: false,
+  elenco: [
     "Mel Gibson",
     "Heath Ledger",
     "Joely Richardson",
@@ -129,26 +131,79 @@ const arrayFilmes = [];
 
 //3. Adicione os objetos criados no item 1 ao array de objetos criado no item 2, utilizando o push()
 
-/*RESPOSTA
-arrayFilmes.push(objeto1,objeto2,objeto3)*/
+arrayFilmes.push(objetoFilme1, objetoFilme2, objetoFilme3);
 
 //4. Altere o item “Adicione os novos objetos no array de objetos, utilizando o push()” (item 3), para criar uma verificação antes de dar o push. A caraterística booleana do objeto deve ser validada. Isto é, o objeto só deve ser adicionado ao array se a propriedade booleana for true;
 //5. Crie uma condição else, que, em caso de valor false na condição acima, exiba um **ALERT** avisando para o usuário que o item não foi adicionado, e não faça o push
 
-if (objeto1.venceuOscar1) {
-  arrayFilmes.push(objeto1);
+const arrayFilmesOscar = [];
+
+if (objetoFilme1.venceuOscar) {
+  arrayFilmesOscar.push(objetoFilme1);
 } else {
-  console.log(alert("Objeto1 não adicionado"));
+  console.log(alert("Filme 1 não adicionado"));
 }
 
-if (objeto2.venceuOscar2) {
-  arrayFilmes.push(objeto2);
+if (objetoFilme2.venceuOscar) {
+  arrayFilmesOscar.push(objetoFilme2);
 } else {
-  console.log(alert("Objeto2 não adicionado"));
+  console.log(alert("Filme 2 não adicionado"));
 }
 
-if (objeto3.venceuOscar3) {
-  arrayFilmes.push(objeto3);
+if (objetoFilme3.venceuOscar) {
+  arrayFilmesOscar.push(objetoFilme3);
 } else {
-  console.log(alert("Objeto3 não adicionado"));
+  console.log(alert("Filme 3 não adicionado"));
 }
+
+//==================================================================================================================
+//SEMANA 3
+
+//1. Reescrevendo o relatório criado utilizando console.log() que começamos na semana 2, altere a forma que a característica de array dos itens seja escrita como um laço que guarde todos os valores da propriedade array do objeto em uma mesma string. Utilize esta string no relatório.
+
+const novoFormatoElenco = arrayFilmes.map((filme) => {
+  return { ...filme, elenco: filme.elenco.toString() };
+});
+console.log(novoFormatoElenco);
+
+//2. Ainda no relatório, altere-o para que ele seja criado utilizando laços. Ou seja, você não deve mais imprimir individualmente cada item do relatório. Cada item deve ser exibido a partir de uma iteração do laço. Para testar, adicione mais um item ao array de objetos, e verifique se ele é exibido corretamente.
+
+/*const objetoTeste = {
+  filme:"Exemplo",
+  duracao: 120
+}
+arrayFilmes.push(objetoTeste)*/
+
+for (let objeto of arrayFilmes) {
+  for (let propriedade in objeto) {
+    console.log(`${propriedade}: ${objeto[propriedade]}`);
+  }
+}
+
+//3. Crie uma função que receba como parâmetro um objeto, e devolva a string do relatório com os dados do objeto.
+
+const objetoEmString = function objetoString(objeto) {
+  let filmeString = "";
+  for (propriedade in objeto) {
+    filmeString += `${propriedade}:${objeto[propriedade]} `;
+  }
+  console.log(filmeString);
+  return filmeString;
+};
+
+objetoEmString(objetoFilme1);
+
+//4. Crie uma função que recebe um array de objetos e uma string. Esta função deve retornar um objeto, e o objeto retornado deve possuir apenas os itens que tenham o nome/título igual à string passada como parâmetro. Caso não exista um item, exiba um ALERT indicando que nenhum item foi encontrado.
+
+const objetoFilter = (array, string) => {
+  const titulo = array.filter((objeto) => objeto.filme === string);
+
+  if (titulo.length === 0) {
+    alert("Nenhum filme encontrado!");
+  } else {
+    console.log(titulo);
+  }
+  return titulo;
+};
+
+objetoFilter(arrayFilmes, "O Resgate do Soldado Ryan");
