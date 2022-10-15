@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+.topo {
+  height: 6vh;
+  color: gold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.main {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.pesquisa {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+
+.filmes {
+  display: flex;
+  gap: 10px;
+  width: 60vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.cardFilme {
+  background-color: wheat;
+  color: black;
+  border: 2px outset gold;
+  display: flex;
+  width: 60%;
+  padding: 20px;
+}
+
+.rodape {
+  height: 6vh;
+  margin-top: 10px;
+  background-color: black;
+  color: gold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardFilme > img {
+  margin-right: 10px;
+  border: 2px outset gold;
+}

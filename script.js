@@ -96,7 +96,7 @@ const objetoFilme1 = {
     "Oliver Reed",
     "Derek Jacobi",
     "Djimon Hounsou",
-    "Richard Harris",
+    "Richard Harris"
   ],
 };
 const objetoFilme2 = {
@@ -109,7 +109,7 @@ const objetoFilme2 = {
     "Matt Damon",
     "Edward Burns",
     "Barry Pepper",
-    "Vin Diesel",
+    "Vin Diesel"
   ],
 };
 const objetoFilme3 = {
@@ -121,7 +121,7 @@ const objetoFilme3 = {
     "Heath Ledger",
     "Joely Richardson",
     "Jason Isaacs",
-    "Chris Cooper",
+    "Chris Cooper"
   ],
 };
 
@@ -207,3 +207,8 @@ const objetoFilter = (array, string) => {
 };
 
 objetoFilter(arrayFilmes, "O Resgate do Soldado Ryan");
+
+
+//==================================================================================================================
+//SEMANA 4
+//ARQUIVO INDEX.HTML
