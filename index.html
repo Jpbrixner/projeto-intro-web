@@ -1,14 +1,108 @@
+<!-- SEMANA 4 -->
+
+<!-- 1. Crie uma página HTML, e nesta página, dê um título para sua lista de itens; -->
+<!-- 2. Crie um cabeçalho, uma seção principal, e um footer para a página; -->
+<!-- 3. Na seção principal. Crie duas divisões. Uma deve possuir um input e um botão. A outra, deve possuir sections para criar os itens da lista; -->
+<!-- 4. Crie uma section para cada item da lista; -->
+<!-- 5. Para cada um dos três itens criados deve possuir todas as informações do array de objetos. As informações devem estar elencadas como lista não ordenada. Esta tela não precisa interagir com o JavaScript, tendo seus dados escritos diretamente nos elementos. -->
+<!-- 6. Transforme o nome/título do item em um link para um artigo sobre este item (pode ser do google, de algum blog ou da Wikipédia) -->
+
 <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>Projeto 2</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filmes Premiados</title>
     <script src="script.js"></script>
-</head>
-
-<body>
-
-</body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topo">
+      <h1>Filmes Premiados</h1>
+    </header>
+    <main class="main">
+      <div class="pesquisa">
+        <label for="filme"></label>
+        <input type="text" name="filme" id="filme" /><button type="submit">
+          Buscar
+        </button>
+      </div>
+      <sections class="filmes">
+        <section class="cardFilme">
+          <img
+            src="./midia/filmeGladiador.jpg"
+            alt="Cartaz do filme O Gladiador"
+            width="100"
+            height="150"
+          />
+          <ul>
+            <li>
+              <a
+                href="https://pt.wikipedia.org/wiki/Gladiador_(filme)"
+                target="_blank"
+                >Gladiador</a
+              >
+            </li>
+            <li>155 min</li>
+            <li>Vencedor do Oscar</li>
+            <li>
+              Elenco: Russell Crowe, Joaquin Phoenix, Connie Nielsen, Oliver
+              Reed, Derek Jacobi, Djimon Hounsou, Richard Harris.
+            </li>
+          </ul>
+        </section>
+        <section class="cardFilme">
+          <img
+            src="./midia/filmeSoldadoRyan.jpg"
+            alt="Cartaz do filme O Resgate do Soldado Ryan"
+            width="100"
+            height="150"
+          />
+          <ul>
+            <li>
+              <a
+                href="https://pt.wikipedia.org/wiki/O_Resgate_do_Soldado_Ryan"
+                target="_blank"
+                >O Resgate do Soldado Ryan</a
+              >
+            </li>
+            <li>169 min</li>
+            <li>Vencedor do Oscar</li>
+            <li>
+              Elenco: Tom Hanks, Tom Sizemore, Matt Damon, Edward Burns, Barry
+              Pepper, Vin Diesel.
+            </li>
+          </ul>
+        </section>
+        <section class="cardFilme">
+          <img
+            src="./midia/filmeOPatriota.jpg"
+            alt="Cartaz do filme O Patriota"
+            width="100"
+            height="150"
+          />
+          <ul>
+            <li>
+              <a
+                href="https://pt.wikipedia.org/wiki/O_Patriota_(filme_de_2000)"
+                target="_blank"
+                >O Patriota</a
+              >
+            </li>
+            <li>175 min</li>
+            <li>Indicado ao Oscar</li>
+            <li>
+              Elenco: Mel Gibson, Heath Ledger, Joely Richardson, Jason Isaacs,
+              Chris Cooper.
+            </li>
+          </ul>
+        </section>
+      </sections>
+    </main>
+    <footer class="rodape">
+      <p>Criado por: João Pedro Brixner</p>
+      <p><a href="https://github.com/Jpbrixner" target="_blank">github</a></p>
+    </footer>
+  </body>
 </html>
