@@ -1,3 +1,20 @@
+/* SEMANA 5 */
+
+/* Parte1 - aplicando Flexbox:
+
+1. Transforme os elementos da lista de itens em Flexbox;
+OU
+1. Transforme o container da tela toda em Flexbox;
+
+Parte2 - aplicando Grid:
+Depois disso:
+
+1. Transforme os elementos da lista de itens em Grid;
+2. Faça com que a página se torne responsiva, exibindo corretamente as informações em desktop e móvel;
+OU
+1. Transforme o container da tela toda em Grid;
+2. Faça com que a página se torne responsiva, exibindo corretamente as informações em desktop e móvel; */
+
 * {
   padding: 0;
   margin: 0;
@@ -5,8 +22,14 @@
   font-family: cursive;
 }
 
+.master {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 1fr 60px;
+  gap: 10px;
+}
+
 .topo {
-  height: 6vh;
   color: gold;
   display: flex;
   justify-content: center;
@@ -15,7 +38,6 @@
 }
 
 .main {
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,35 +47,69 @@
 .pesquisa {
   display: flex;
   justify-content: center;
-  gap: 3px;
+  gap: 5px;
 }
 
 .filmes {
-  display: flex;
-  gap: 10px;
-  width: 60vw;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  width: 900px;
+  height: 700px;
+  padding-top: 80px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  justify-items: center;
   background-color: white;
 }
 
-ul {
+li {
   list-style-type: none;
 }
 
+a {
+  color: gold;
+}
+
+button {
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: -2px 3px 10px -7px black;
+}
+
+input {
+  border-radius: 10px;
+}
+
 .cardFilme {
-  background-color: wheat;
-  color: black;
-  border: 2px outset gold;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  box-shadow: -2px 3px 30px -7px black;
   display: flex;
-  width: 60%;
-  padding: 20px;
+  flex-direction: column;
+  height: 420px;
+  width: 250px;
+  padding: 10px;
+}
+
+#imagem > img {
+  height: 200px;
+  width: 150px;
+  display: flex;
+  align-self: center;
+  border-radius: 10px;
+  border: 2px outset gold;
+  margin-bottom: 10px;
+  box-shadow: -2px 3px 20px -7px gold;
+}
+
+#imagem {
+  display: flex;
+  justify-content: center;
 }
 
 .rodape {
-  height: 6vh;
-  margin-top: 10px;
   background-color: black;
   color: gold;
   display: flex;
@@ -61,7 +117,41 @@ ul {
   align-items: center;
 }
 
-.cardFilme > img {
-  margin-right: 10px;
-  border: 2px outset gold;
+@media screen and (max-device-width: 900px) {
+  .filmes {
+    display: grid;
+    padding: 0;
+    width: 700px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    gap: 50px;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+  }
+
+  .cardFilme {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100px 1fr;
+  }
+
+  #imagem {
+    margin-right: 15px;
+  }
+
+  #imagem > img {
+    height: 130px;
+    width: 90px;
+    display: flex;
+    border: 2px outset gold;
+  }
+
+  .cardFilme {
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    display: flex;
+  }
 }

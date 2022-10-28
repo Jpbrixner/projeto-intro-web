@@ -96,7 +96,7 @@ const objetoFilme1 = {
     "Oliver Reed",
     "Derek Jacobi",
     "Djimon Hounsou",
-    "Richard Harris"
+    "Richard Harris",
   ],
 };
 const objetoFilme2 = {
@@ -109,7 +109,7 @@ const objetoFilme2 = {
     "Matt Damon",
     "Edward Burns",
     "Barry Pepper",
-    "Vin Diesel"
+    "Vin Diesel",
   ],
 };
 const objetoFilme3 = {
@@ -121,7 +121,7 @@ const objetoFilme3 = {
     "Heath Ledger",
     "Joely Richardson",
     "Jason Isaacs",
-    "Chris Cooper"
+    "Chris Cooper",
   ],
 };
 
@@ -150,11 +150,12 @@ if (objetoFilme2.venceuOscar) {
   console.log(alert("Filme 2 não adicionado"));
 }
 
-if (objetoFilme3.venceuOscar) {
-  arrayFilmesOscar.push(objetoFilme3);
-} else {
-  console.log(alert("Filme 3 não adicionado"));
-}
+// Para não aparecer o alert na tela eu comentei esse:
+// if (objetoFilme3.venceuOscar) {
+//   arrayFilmesOscar.push(objetoFilme3);
+// } else {
+//   console.log(alert("Filme 3 não adicionado"));
+// }
 
 //==================================================================================================================
 //SEMANA 3
@@ -206,9 +207,51 @@ const objetoFilter = (array, string) => {
   return titulo;
 };
 
-objetoFilter(arrayFilmes, "O Resgate do Soldado Ryan");
-
+objetoFilter(arrayFilmes, "Gladiador");
 
 //==================================================================================================================
 //SEMANA 4
 //ARQUIVO INDEX.HTML
+
+//==================================================================================================================
+//SEMANA 5
+//ARQUIVO STYLE.CSS
+
+//==================================================================================================================
+//SEMANA 6
+
+//1. Altere seu código para que a tela de lista de itens crie os elementos da lista através de manipulação do DOM.
+
+//Atualmente, seus elementos estão criados no HTML e no CSS de forma estática, sem que exista interação entre HTML e CSS e o Script que criamos. A ideia é que agora, os dados que compõem os elementos HTML devem ser criados a partir do nosso código JS. Para isso, devemos manipular os objetos do HTML e do CSS utilizando o DOM.
+
+function adicionarFilmes(objeto, id) {
+  for (i in objeto) {
+    let filme = document.getElementById(id);
+    let infoCard = document.createElement("li");
+    filme.appendChild(infoCard);
+    infoCard.innerHTML = objeto[i];
+  }
+}
+
+adicionarFilmes(objetoFilme1, "infoCard1");
+adicionarFilmes(objetoFilme2, "infoCard2");
+adicionarFilmes(objetoFilme3, "infoCard3");
+
+//2. Utilize a função de busca criada no item 2 da semana 6 para fazer com que ao digitar um campo no input e apertar o botão, apenas os itens com nome igual ao da busca sejam renderizados na tela.
+
+function buscarFilme() {
+  let input = document.getElementById("input").value;
+  input = input.toUpperCase();
+  let card = document.getElementsByClassName("cardFilme");
+
+  for (i = 0; i < card.length; i++) {
+    if (!card[i].innerHTML.toUpperCase().includes(input)) {
+      card[i].style.display = "none";
+    } else {
+      card[i].style.display = "inherit";
+    }
+  }
+  if (input === "") {
+    alert("Digite o nome de um filme");
+  }
+}
