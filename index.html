@@ -13,96 +13,84 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filmes Premiados</title>
-    <script src="script.js"></script>
+    <title>FILMES PREMIADOS</title>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="topo">
-      <h1>Filmes Premiados</h1>
-    </header>
-    <main class="main">
-      <div class="pesquisa">
-        <label for="filme"></label>
-        <input type="text" name="filme" id="filme" /><button type="submit">
-          Buscar
-        </button>
-      </div>
-      <sections class="filmes">
-        <section class="cardFilme">
-          <img
-            src="./midia/filmeGladiador.jpg"
-            alt="Cartaz do filme O Gladiador"
-            width="100"
-            height="150"
-          />
-          <ul>
-            <li>
-              <a
-                href="https://pt.wikipedia.org/wiki/Gladiador_(filme)"
-                target="_blank"
-                >Gladiador</a
-              >
-            </li>
-            <li>155 min</li>
-            <li>Vencedor do Oscar</li>
-            <li>
-              Elenco: Russell Crowe, Joaquin Phoenix, Connie Nielsen, Oliver
-              Reed, Derek Jacobi, Djimon Hounsou, Richard Harris.
-            </li>
-          </ul>
-        </section>
-        <section class="cardFilme">
-          <img
-            src="./midia/filmeSoldadoRyan.jpg"
-            alt="Cartaz do filme O Resgate do Soldado Ryan"
-            width="100"
-            height="150"
-          />
-          <ul>
-            <li>
-              <a
-                href="https://pt.wikipedia.org/wiki/O_Resgate_do_Soldado_Ryan"
-                target="_blank"
-                >O Resgate do Soldado Ryan</a
-              >
-            </li>
-            <li>169 min</li>
-            <li>Vencedor do Oscar</li>
-            <li>
-              Elenco: Tom Hanks, Tom Sizemore, Matt Damon, Edward Burns, Barry
-              Pepper, Vin Diesel.
-            </li>
-          </ul>
-        </section>
-        <section class="cardFilme">
-          <img
-            src="./midia/filmeOPatriota.jpg"
-            alt="Cartaz do filme O Patriota"
-            width="100"
-            height="150"
-          />
-          <ul>
-            <li>
-              <a
-                href="https://pt.wikipedia.org/wiki/O_Patriota_(filme_de_2000)"
-                target="_blank"
-                >O Patriota</a
-              >
-            </li>
-            <li>175 min</li>
-            <li>Indicado ao Oscar</li>
-            <li>
-              Elenco: Mel Gibson, Heath Ledger, Joely Richardson, Jason Isaacs,
-              Chris Cooper.
-            </li>
-          </ul>
-        </section>
-      </sections>
-    </main>
-    <footer class="rodape">
-      <p>Criado por: João Pedro Brixner</p>
-      <p><a href="https://github.com/Jpbrixner" target="_blank">github</a></p>
-    </footer>
+    <div class="master">
+      <header class="topo">
+        <h1>FILMES PREMIADOS</h1>
+      </header>
+      <main class="main">
+        <div class="pesquisa">
+          <input id="input" />
+          <button onclick="buscarFilme(event)">Buscar</button>
+        </div>
+        <sections class="filmes">
+          <section class="cardFilme" id="gladiador">
+            <div id="imagem">
+              <img
+                src="./midia/filmeGladiador.jpg"
+                alt="Cartaz do filme O Gladiador"
+                width="80"
+                height="100"
+              />
+            </div>
+            <ul class="infoContainer" id="infoCard1">
+              <li>
+                <a
+                  href="https://pt.wikipedia.org/wiki/Gladiador_(filme)"
+                  target="_blank"
+                  >GLADIADOR</a
+                >
+              </li>
+            </ul>
+          </section>
+          <section class="cardFilme" id="resgate">
+            <div id="imagem">
+              <img
+                src="./midia/filmeSoldadoRyan.jpg"
+                alt="Cartaz do filme O Resgate do Soldado Ryan"
+                width="80"
+                height="100"
+              />
+            </div>
+            <ul class="infoContainer" id="infoCard2">
+              <li>
+                <a
+                  href="https://pt.wikipedia.org/wiki/O_Resgate_do_Soldado_Ryan"
+                  target="_blank"
+                  >O RESGATE DO SOLDADO RYAN</a
+                >
+              </li>
+            </ul>
+          </section>
+          <section class="cardFilme" id="patriota">
+            <div id="imagem">
+              <img
+                src="./midia/filmeOPatriota.jpg"
+                alt="Cartaz do filme O Patriota"
+                width="80"
+                height="100"
+              />
+            </div>
+            <ul class="infoContainer" id="infoCard3">
+              <li>
+                <a
+                  href="https://pt.wikipedia.org/wiki/O_Patriota_(filme_de_2000)"
+                  target="_blank"
+                  >O PATRIOTA</a
+                >
+              </li>
+            </ul>
+          </section>
+        </sections>
+      </main>
+      <footer class="rodape">
+        <p>Criado por: João Pedro Brixner</p>
+        <p><a href="https://github.com/Jpbrixner" target="_blank">Github</a></p>
+      </footer>
+    </div>
   </body>
 </html>
